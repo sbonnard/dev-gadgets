@@ -30,7 +30,7 @@ const addQty = document.getElementById('add-qty');
 
 /**
  * Turn a button to disabled.
- * @param {element} buttonName The button you want to disable.
+ * @param {element} buttonName - The button you want to disable.
  */
 function disableCartButton(buttonName) {
     buttonName.classList.add('add-cta--disabled');
@@ -42,7 +42,7 @@ function disableCartButton(buttonName) {
 
 /**
  * Adds the value from the input to the cart and displays it.
- * @param {element} cartCounter The cart counter over the cart icon.
+ * @param {element} cartCounter - The cart counter over the cart icon.
  */
 function displayCartNumber(cartCounter) {
     cartNumber.innerText = addQty.value;
@@ -60,13 +60,25 @@ cartButton.addEventListener('click', function (event) {
 // Accordeon 
 
 const advantagesAccordeon = document.getElementById('advantages');
-console.log(advantagesAccordeon);
-
 const advantages = document.getElementById('advantages-list');
-console.log(advantages);
+const caracteristics = document.getElementById('caracteristics');
+const carList = document.getElementById('car-list');
+
+/**
+ * Set the state of the accordeon from opened to closed.
+ * @param {element} elementTitle - The element you have to click on to change the state of the accordeon.
+ * @param {element} elementText - The element that will be hidden by the event listener.
+ */
+function setAccordeonState(elementTitle, elementText) {
+    elementTitle.setAttribute('aria-expanded', 'false');
+    elementTitle.classList.toggle('closed');
+    elementText.classList.toggle("hidden")
+}
 
 advantagesAccordeon.addEventListener('click', function () {
-    advantagesAccordeon.setAttribute('aria-expanded', 'false')
-    advantagesAccordeon.classList.toggle('closed');
-    advantages.classList.toggle("hidden")
+    setAccordeonState(advantagesAccordeon, advantages);
+})
+
+caracteristics.addEventListener('click', function () {
+    setAccordeonState(caracteristics, carList);
 })

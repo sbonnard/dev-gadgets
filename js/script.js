@@ -1,3 +1,4 @@
+// import * as Functions from "../js/functions.js"
 
 // Previous button
 
@@ -15,12 +16,10 @@ duckPics.forEach(element => {
     })
 })
 
-// previousButton.addEventListener('click', function(event){
-//     let i = 0;
-//     for (let pic of duckPics) {    
-//         mainDuckPic.src = `img/canard-jaune-${5}-l.png`
-//     }
-// })
+previousButton.addEventListener('click', function(event){
+    let i = 0;
+        mainDuckPic.src = `img/canard-jaune-${5}-l.png`    
+})
 
 // Cart
 
@@ -82,3 +81,30 @@ advantagesAccordeon.addEventListener('click', function () {
 caracteristics.addEventListener('click', function () {
     setAccordeonState(caracteristics, carList);
 })
+
+// PRODUCT SUGGESTIONS
+
+const suggestionImg = document.getElementById('similar-product-img');
+const suggestionTtl = document.getElementById('similar-product-ttl');
+const similarBtnNext = document.getElementById('similar-btn-next');
+const similarBtnPrev = document.getElementById('similar-btn-prev');
+const similarList = document.querySelectorAll('#similar-list');
+
+console.log(similarList);
+
+similarBtnNext.addEventListener('click', function(){
+    suggestionImg.src = "img/canard-geek.png";
+})
+
+similarBtnPrev.addEventListener('click', function(){
+    suggestionImg.src = "img/canard-dragon.png";
+})
+
+
+
+// if (suggestionImg.src === "img/canard-dragon.png") {
+//     similarBtnPrev.disabled = true;
+//     similarBtnPrev.setAttribute('aria-disabled', 'true')
+//     similarBtnPrev.classList.add("pictures-handler--similar--disabled")
+// }
+

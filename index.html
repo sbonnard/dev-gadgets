@@ -85,7 +85,8 @@
                 </div>
             </div>
             <div>
-                <h2 id="caracteristics" class="product-subttl product-acrd-lnk">Caractéristiques</h2>
+                <h2 id="caracteristics" class="product-subttl product-acrd-lnk" aria-expanded="true">Caractéristiques
+                </h2>
                 <div id="car-list">
                     <dl class="product-car">
                         <dt>Dimensions</dt>
@@ -104,7 +105,20 @@
         </section>
         <section class="similar page-section" aria-labelledby="similar-products">
             <h2 id="similar-products" class="product-subttl">Articles similaires</h2>
-            <ul class="similar-lst">
+
+            <div class="similar-selling">
+                <button id="similar-btn-prev" type="button" class="pictures-handler pictures-handler--similar pictures-prev"
+                    data-previous-button="" aria-label="Boutons vers produit précédent">◀️</button>
+                <a class="similar-lnk" href="#" aria-label="Lien vers le produit canard-dragon">
+                    <img id="similar-product-img" class="similar-img" src="img/canard-dragon.png" alt="canard dragon">
+                    <h3 id="similar-product-ttl" class="similar-ttl">Canard Dragon</h3>
+                    <div class="similar-price">19€95</div>
+                </a>
+                <button id="similar-btn-next" type="button" class="pictures-handler pictures-handler--similar pictures-next"
+                    aria-label="Boutons vers produit suivant">▶️</button>
+            </div>
+
+            <ul id="similar-list" class="similar-lst">
                 <li class="similar-itm" aria-labelledby="canard-dragon">
                     <a class="similar-lnk" href="#" aria-label="Lien vers le produit canard-dragon">
                         <img class="similar-img" src="img/canard-dragon.png" alt="canard dragon">

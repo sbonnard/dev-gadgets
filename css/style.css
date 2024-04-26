@@ -315,6 +315,15 @@ body {
     cursor: pointer;
 }
 
+.pictures-handler--similar {
+    top: 185rem;
+    z-index: 100;
+}
+
+.pictures-handler--similar--disabled{
+    display: none;
+}
+
 .pictures-prev {
     left: 1rem;
 }
@@ -420,6 +429,16 @@ body {
 @media screen and (min-width: 768px) {
     .similar-lnk:hover {
         background-color: #dddddd;
+    }
+
+    .similar-selling {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .similar-lst{
+        display: none;
     }
 }
 

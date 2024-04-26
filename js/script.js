@@ -62,11 +62,11 @@ cartButton.addEventListener('click', function (event) {
 const advantagesAccordeon = document.getElementById('advantages');
 console.log(advantagesAccordeon);
 
-const advantages = document.querySelector('js-product-advantages');
+const advantages = document.getElementById('advantages-list');
 console.log(advantages);
 
 advantagesAccordeon.addEventListener('click', function () {
     advantagesAccordeon.setAttribute('aria-expanded', 'false')
-    advantagesAccordeon.classList.add('closed');
-    advantages.classList.add("hidden")
+    advantagesAccordeon.classList.toggle('closed');
+    advantages.classList.toggle("hidden")
 })

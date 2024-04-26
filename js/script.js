@@ -42,8 +42,19 @@ function disableCartButton(buttonName) {
     buttonName.disabled = true;
 }
 
+/**
+ * Adds the value from the input to the cart and displays it.
+ * @param {element} cartCounter The cart counter over the cart icon.
+ */
+function displayCartNumber(cartCounter) {
+    cartNumber.innerText = addQty.value;
+    if(addQty.value > 99){
+        cartNumber.innerText = '99+';
+    }
+}
+
 
 cartButton.addEventListener('click', function(event){
     disableCartButton(cartButton);
-    cartNumber.innerText = addQty.value;
+    displayCartNumber(cartNumber);
 } )

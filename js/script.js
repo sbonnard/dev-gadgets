@@ -108,3 +108,15 @@ similarBtnPrev.addEventListener('click', function(){
 //     similarBtnPrev.classList.add("pictures-handler--similar--disabled")
 // }
 
+// Randomize suggested products
+
+/**
+ * Get a random value from an array using its indexes.
+ * @param {array} array The array you want a random value from.
+ * @returns {number} The random value.
+ */
+function getRandomValueArray(array) {
+    return array[Math.floor(Math.random() * (array.length))]
+}
+
+console.log(getRandomValueArray(""));

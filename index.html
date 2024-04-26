@@ -27,24 +27,24 @@
         <h1 class="page-ttl" id="product-name">Canard jaune pour la revue de code</h1>
         <section class="page-pics" aria-labelledby="product-name">
             <div class="pictures">
-                <button type="button" class="pictures-handler pictures-prev" aria-label="Boutons vers produit précédent">◀️</button>
-                <img class="pictures-img" src="img/canard-jaune-1-l.png" alt="canard jaune pour développeur">
+                <button type="button" class="pictures-handler pictures-prev" data-previous-button="" aria-label="Boutons vers produit précédent">◀️</button>
+                <img id="main-duck-pic" class="pictures-img" src="img/canard-jaune-1-l.png" alt="canard jaune pour développeur">
                 <button type="button" class="pictures-handler pictures-next" aria-label="Boutons vers produit suivant">▶️</button>
                 <ul class="thumbs">
                     <li class="thumbs-itm">
-                        <img class="thumbs-img" src="img/canard-jaune-1-s.png" alt="canard" aria-label="point de vue trois quart face du produit">
+                        <img data-duck-pic="img/canard-jaune-1-l.png" class="thumbs-img" src="img/canard-jaune-1-s.png" alt="canard" aria-label="point de vue trois quart face du produit">
                     </li>
                     <li class="thumbs-itm">
-                        <img class="thumbs-img" src="img/canard-jaune-2-s.png" alt="canard" aria-label="point de vue de profil du produit">
+                        <img data-duck-pic="img/canard-jaune-2-l.png" class="thumbs-img" src="img/canard-jaune-2-s.png" alt="canard" aria-label="point de vue de profil du produit">
                     </li>
                     <li class="thumbs-itm">
-                        <img class="thumbs-img" src="img/canard-jaune-3-s.png" alt="canard" aria-label="point de vue de face du produit">
+                        <img data-duck-pic="img/canard-jaune-3-l.png" class="thumbs-img" src="img/canard-jaune-3-s.png" alt="canard" aria-label="point de vue de face du produit">
                     </li>
                     <li class="thumbs-itm">
-                        <img class="thumbs-img" src="img/canard-jaune-4-s.png" alt="canard" aria-label="le canard regarde un écran d'ordinateur">
+                        <img data-duck-pic="img/canard-jaune-4-l.png" class="thumbs-img" src="img/canard-jaune-4-s.png" alt="canard" aria-label="le canard regarde un écran d'ordinateur">
                     </li>
                     <li class="thumbs-itm">
-                        <img class="thumbs-img" src="img/canard-jaune-5-s.png" alt="canard" aria-label="produit vu du dessus sur fond bleu">
+                        <img data-duck-pic="img/canard-jaune-5-l.png" class="thumbs-img" src="img/canard-jaune-5-s.png" alt="canard" aria-label="produit vu du dessus sur fond bleu">
                     </li>
                 </ul>
             </div>
@@ -150,5 +150,8 @@
         </nav>
         <div class="footer-cp" aria-label="copyright">© 2024 - Dev Gadgets</div>
     </footer>
+
+    <script type="module" src="js/script.js"></script>
+
 </body>
 </html>

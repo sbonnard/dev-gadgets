@@ -22,7 +22,7 @@
             </a>
             <a class="cart" href="#" aria-label="Lien vers le panier">
                 <img class="cart-img" src="img/cart.png" alt="panier">
-                <span class="cart-nb" aria-label="Nombre d'articles dans le panier">0</span>
+                <span id="cart-counter" class="cart-nb" aria-label="Nombre d'articles dans le panier">0</span>
             </a>
         </div>
     </header>
@@ -63,8 +63,8 @@
                 11€95
             </div>
             <div class="add">
-                <input class="add-qty" type="text" value="1" aria-label="Quelle quantité en voulez-vous ?">
-                <button class="add-cta" type="button">Ajouter au panier</button>
+                <input id="add-qty" class="add-qty" type="text" value="1" aria-label="Quelle quantité en voulez-vous ?">
+                <button id="cart-button" class="add-cta" type="button">Ajouter au panier</button>
             </div>
         </section>
         <section class="page-txt page-section" aria-labelledby="advantages">

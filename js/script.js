@@ -1,18 +1,13 @@
+
 // Previous button
 
 const previousButton = document.querySelector('[data-previous-button]');
 
-const duckPic1 =  document.querySelector('[data-duck-pic="img/canard-jaune-1-l.png"]');
-const duckPic2 =  document.querySelector('[data-duck-pic="img/canard-jaune-2-l.png"]');
-const duckPic3 =  document.querySelector('[data-duck-pic="img/canard-jaune-3-l.png"]');
-const duckPic4 =  document.querySelector('[data-duck-pic="img/canard-jaune-4-l.png"]');
-const duckPic5 =  document.querySelector('[data-duck-pic="img/canard-jaune-5-l.png"]');
-
 const duckPics =  document.querySelectorAll('[data-duck-pic]');
-console.log(duckPics);
+// console.log(duckPics);
 
 const mainDuckPic = document.getElementById('main-duck-pic');
-console.log(mainDuckPic);
+// console.log(mainDuckPic);
 
 duckPics.forEach(element => {
     element.addEventListener('mouseover', function(){
@@ -27,4 +22,28 @@ duckPics.forEach(element => {
 //     }
 // })
 
+// Cart
 
+let cartNumber = document.getElementById('cart-counter');
+console.log(cartNumber);
+
+const cartButton = document.getElementById('cart-button');
+console.log(cartButton);
+
+const addQty = document.getElementById('add-qty');
+console.log(addQty);
+
+/**
+ * Turn a button to disabled.
+ * @param {element} buttonName The button you want to disable.
+ */
+function disableCartButton(buttonName) {
+    buttonName.classList.add('add-cta--disabled');
+    buttonName.disabled = true;
+}
+
+
+cartButton.addEventListener('click', function(event){
+    disableCartButton(cartButton);
+    cartNumber.innerText = addQty.value;
+} )

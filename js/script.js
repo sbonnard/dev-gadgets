@@ -35,7 +35,9 @@ const addQty = document.getElementById('add-qty');
 function disableCartButton(buttonName) {
     buttonName.classList.add('add-cta--disabled');
     buttonName.disabled = true;
-    buttonName.setAttribute('aria-disabled', 'true')
+    buttonName.setAttribute('aria-disabled', 'true');
+    let clickCounter = 0;
+    buttonName.innerText = "Déjà au panier";
 }
 
 /**
@@ -57,12 +59,14 @@ cartButton.addEventListener('click', function (event) {
 
 // Accordeon 
 
-const advantages = document.getElementById('advantages');
+const advantagesAccordeon = document.getElementById('advantages');
+console.log(advantagesAccordeon);
+
+const advantages = document.querySelector('js-product-advantages');
 console.log(advantages);
 
-advantages.addEventListener('click', function () {
-    let clickCounter = 0;
-    if (clickCounter %= 1) {
-        this.setAttribute('aria-expanded', 'false').toggle()
-    }
+advantagesAccordeon.addEventListener('click', function () {
+    advantagesAccordeon.setAttribute('aria-expanded', 'false')
+    advantagesAccordeon.classList.add('closed');
+    advantages.classList.add("hidden")
 })

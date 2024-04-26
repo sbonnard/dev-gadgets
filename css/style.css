@@ -77,6 +77,12 @@ body {
 }
 
 
+/* UTILS */
+
+.hidden{
+    display: none;
+}
+
 /* HEADER  */
 
 .header {

@@ -1,14 +1,31 @@
-// import * as Functions from "../js/functions.js"
-
 // Previous button
 
 const previousButton = document.querySelector('[data-previous-button]');
-
+const nextButton = document.querySelector('[data-next-button]')
 const duckPics = document.querySelectorAll('[data-duck-pic]');
-// console.log(duckPics);
-
 const mainDuckPic = document.getElementById('main-duck-pic');
-// console.log(mainDuckPic);
+
+let i = 0;
+
+/**
+ * In an event listener, it allow to go to the next image.
+ * @param {element} element - The element you want the image to be displayed in.
+ * @param {array} array - The array you want the source from.
+ */
+function goToNextImg(element, array) {
+    i++
+    element.src = array[i].src;
+}
+
+/**
+ * In an event listener, it allow to go to the previous image.
+ * @param {element} element - The element you want the image to be displayed in.
+ * @param {array} array - The array you want the source from.
+ */
+function goToPreviousImg(element, array) {
+    i--
+    element.src = array[i].src;
+}
 
 duckPics.forEach(element => {
     element.addEventListener('mouseover', function () {
@@ -16,9 +33,12 @@ duckPics.forEach(element => {
     })
 })
 
-previousButton.addEventListener('click', function(event){
-    let i = 0;
-        mainDuckPic.src = `img/canard-jaune-${5}-l.png`    
+nextButton.addEventListener('click', function (event) {
+    goToNextImg(mainDuckPic, duckPics);
+})
+
+previousButton.addEventListener('click', function (event) {
+    goToPreviousImg(mainDuckPic, duckPics);
 })
 
 // Cart
@@ -50,10 +70,18 @@ function displayCartNumber(cartCounter) {
     }
 }
 
-
 cartButton.addEventListener('click', function (event) {
     disableCartButton(cartButton);
     displayCartNumber(cartNumber);
+})
+
+addQty.addEventListener('keypress', function (event) {
+    if (event.key === 'Enter') {
+        disableCartButton(cartButton);
+        displayCartNumber(cartNumber);
+        addQty.disabled = true;
+        addQty.setAttribute('aria-disabled', 'true');
+    }
 })
 
 // Accordeon 
@@ -71,7 +99,7 @@ const carList = document.getElementById('car-list');
 function setAccordeonState(elementTitle, elementText) {
     elementTitle.setAttribute('aria-expanded', 'false');
     elementTitle.classList.toggle('closed');
-    elementText.classList.toggle("hidden")
+    elementText.classList.toggle("hidden");
 }
 
 advantagesAccordeon.addEventListener('click', function () {
@@ -90,33 +118,10 @@ const similarBtnNext = document.getElementById('similar-btn-next');
 const similarBtnPrev = document.getElementById('similar-btn-prev');
 const similarList = document.querySelectorAll('#similar-list');
 
-console.log(similarList);
-
-similarBtnNext.addEventListener('click', function(){
+similarBtnNext.addEventListener('click', function () {
     suggestionImg.src = "img/canard-geek.png";
 })
 
-similarBtnPrev.addEventListener('click', function(){
+similarBtnPrev.addEventListener('click', function () {
     suggestionImg.src = "img/canard-dragon.png";
 })
-
-
-
-// if (suggestionImg.src === "img/canard-dragon.png") {
-//     similarBtnPrev.disabled = true;
-//     similarBtnPrev.setAttribute('aria-disabled', 'true')
-//     similarBtnPrev.classList.add("pictures-handler--similar--disabled")
-// }
-
-// Randomize suggested products
-
-/**
- * Get a random value from an array using its indexes.
- * @param {array} array The array you want a random value from.
- * @returns {number} The random value.
- */
-function getRandomValueArray(array) {
-    return array[Math.floor(Math.random() * (array.length))]
-}
-
-console.log(getRandomValueArray(""));

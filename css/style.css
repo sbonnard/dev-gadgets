@@ -79,7 +79,7 @@ body {
 
 /* UTILS */
 
-.hidden{
+.hidden {
     display: none;
 }
 
@@ -320,7 +320,7 @@ body {
     z-index: 100;
 }
 
-.pictures-handler--similar--disabled{
+.pictures-handler--similar--disabled {
     display: none;
 }
 
@@ -437,7 +437,7 @@ body {
 }
 
 @media screen and (max-width: 768px) {
-    .similar-lst{
+    .similar-lst {
         display: none;
     }
 }

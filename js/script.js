@@ -3,14 +3,14 @@
 
 const previousButton = document.querySelector('[data-previous-button]');
 
-const duckPics =  document.querySelectorAll('[data-duck-pic]');
+const duckPics = document.querySelectorAll('[data-duck-pic]');
 // console.log(duckPics);
 
 const mainDuckPic = document.getElementById('main-duck-pic');
 // console.log(mainDuckPic);
 
 duckPics.forEach(element => {
-    element.addEventListener('mouseover', function(){
+    element.addEventListener('mouseover', function () {
         mainDuckPic.src = element.src;
     })
 })
@@ -25,13 +25,8 @@ duckPics.forEach(element => {
 // Cart
 
 let cartNumber = document.getElementById('cart-counter');
-console.log(cartNumber);
-
 const cartButton = document.getElementById('cart-button');
-console.log(cartButton);
-
 const addQty = document.getElementById('add-qty');
-console.log(addQty);
 
 /**
  * Turn a button to disabled.
@@ -40,6 +35,7 @@ console.log(addQty);
 function disableCartButton(buttonName) {
     buttonName.classList.add('add-cta--disabled');
     buttonName.disabled = true;
+    buttonName.setAttribute('aria-disabled', 'true')
 }
 
 /**
@@ -48,13 +44,25 @@ function disableCartButton(buttonName) {
  */
 function displayCartNumber(cartCounter) {
     cartNumber.innerText = addQty.value;
-    if(addQty.value > 99){
+    if (addQty.value > 99) {
         cartNumber.innerText = '99+';
     }
 }
 
 
-cartButton.addEventListener('click', function(event){
+cartButton.addEventListener('click', function (event) {
     disableCartButton(cartButton);
     displayCartNumber(cartNumber);
-} )
+})
+
+// Accordeon 
+
+const advantages = document.getElementById('advantages');
+console.log(advantages);
+
+advantages.addEventListener('click', function () {
+    let clickCounter = 0;
+    if (clickCounter %= 1) {
+        this.setAttribute('aria-expanded', 'false').toggle()
+    }
+})

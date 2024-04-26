@@ -73,6 +73,8 @@ function displayCartNumber(cartCounter) {
 cartButton.addEventListener('click', function (event) {
     disableCartButton(cartButton);
     displayCartNumber(cartNumber);
+    addQty.disabled = true;
+    addQty.setAttribute('aria-disabled', 'true');
 })
 
 addQty.addEventListener('keypress', function (event) {
